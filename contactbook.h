@@ -1,8 +1,13 @@
+/**
+ * Name:Vivek Kumar Singh
+ * Email:singhvivek02099@gmail.com
+ */
+/*Implimented contact book using trie*/
 #include <iostream>
 #include <string.h>
 #include <queue>
 using namespace std;
-// contact entitiy
+// contact entity
 class contact
 {
 public:
@@ -50,6 +55,7 @@ public:
     bool insert(string, string, string);
     vector<contact> search(string, int, int);
     string message() { return mssg; }
+    vector<contact> getList();
 };
 vector<contact> contact_book::search(string key, int type, int search_type)
 {
@@ -232,3 +238,11 @@ vector<contact> contact_book::pre_search(string key, int type)
     result = bfs_search(root);
     return result;
 }
+vector<contact> contact_book::getList()
+{
+    return bfs_search(first);
+}
+/**
+ * Name:Vivek Kumar Singh
+ * Email:singhvivek02099@gmail.com
+ */
